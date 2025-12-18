@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>rose-smiley - Artefact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style_boostrap.css">
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- ШАПКА - Bootstrap Navbar -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/logo.png" alt="logo" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="#">главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">статьи</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">каталог</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">о нас</a></li>
+            <li class="nav-item"><a class="nav-link" href="payment.html">оплата</a></li>
+          </ul>
+        </div>
+        <a href="payment.html" class="shop-icon">
+          <img src="img/shop.png" alt="Shop">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ОСНОВНАЯ СЕКЦИЯ ТОВАРА -->
+  <main class="product-section">
+    <div class="container">
+      <!-- ХЛЕБНЫЕ КРОШКИ - Bootstrap Component -->
+   <nav aria-label="breadcrumb" class="breadcrumb-section">
+     <ol class="breadcrumb">
+       <li class="breadcrumb-item"><a href="../index.html">каталог</a></li>
+       <li class="breadcrumb-item active">роза-смайли</li>
+     </ol>
+   </nav>
+
+      <div class="row">
+         <!-- ЛЕВАЯ КОЛОНКА: Информация о товаре и изображение -->
+         <div class="col-lg-5 col-md-12 product-left">
+
+         <h1 class="product-name"> <span class="larger-word">NAME:</span> <br> РОЗА—<br>СМАЙЛИ</h1>
+         
+         <!-- Основное изображение товара -->
+         <div class="product-image-wrapper">
+           <img id="mainImage" src="img/rose_smiley_boost.jpg" alt="РОЗА-СМАЙЛИ" class="product-image">
+         </div>
+
+         <!-- Цена -->
+         <div class="price-box">
+           <span class="price-label">ЦЕНА</span>
+           <div class="price-display">
+             <span class="price-value">1,500,000</span>
+             <span class="price-currency">₽</span>
+           </div>
+           <p class="price-note">«Прошло много времени с тех пор, как мне пришлось наблюдать за чем-то столь необычным, 
+             что после на меня находит вдохновение, и я делюсь этим с остальными …поразительно, как столь прекрасное 
+             и неземное свечение исходит от такого маленького цветка! А голос, исходящий от этой розы — никогда я ещё не слышал 
+             настолько мягкого и спокойного звука, похожего то на хор женских, то на мужских, то на детских голосов!»</p>
+             <button class="btn btn-outline-light rounded-0">КУПИТЬ</button>
+         </div>
+         
+       </div>
+
+         <!-- ПРАВАЯ КОЛОНКА: Детали и информация -->
+         <div class="col-lg-7 col-md-12 product-right">
+         <!-- Пустое место для выравнивания с изображением -->
+         <div class="product-spacer"></div>
+         <!-- Секция описания -->
+         <section class="about-section">
+           <h2 class="section-title">ПОЛУЧЕННЫЕ ДАННЫЕ</h2>
+           <p class="section-text">
+            Растущие на Уране при температурах, достигающих невероятной отметки -500°C или иногда и -640°C, эти цветы являются редкими представителями класса разумной флоры. 
+            Миллионы лет эволюции приспособили их к не выносимым для человека условиям на этой планете, сделав так, что в наше время без холода продолжительность жизни таких объектов будет составлять от 2 до 3 месяцев. 
+            У цветов нет запаха, т.к. они состоят из голографических уплотнений, благодаря чему мы можем их видеть. Розы-смайли неспроста получили такое название: в ходе изучения данного вида обнаружилось, 
+            что при приближении к цветку и продолжительном нахождении рядом с ними, они начинают испускать звуки, похожие чем-то на церковное пение, при этом сам голос меняется: можно услышать сначала женские голоса, 
+            поющие хором, а после — мужские. Иногда можно услышать и детские голоса, но очень редко. Учёные-исследователи до сих пор не смогли выяснить, с чем это связано, и с какой целью у цветков присутствует такая функция.
+           </p>
+         </section>
+
+         <!-- Секция характеристик -->
+         <section class="characteristics-section">
+           <h3 class="section-title">ХАРАКТЕРИСТИКА</h3>
+           <dl class="characteristics-list">
+
+             <div class="char-item">
+               <dt>РЕДКОСТЬ:</dt>
+               <dd>редкий</dd>
+             </div>
+             <div class="char-item">
+               <dt>КЛАСС:</dt>
+               <dd>Голографические</dd>
+             </div>
+             <div class="char-item">
+               <dt>ТИП:</dt>
+               <dd>разумная флора</dd>
+             </div>
+             <div class="char-item">
+               <dt>ВЫСОТА:</dt>
+               <dd>105 см</dd>
+             </div>
+             <div class="char-item">
+               <dt>ВЕС:</dt>
+               <dd>0,4 кг</dd>
+             </div>
+             <div class="char-item">
+               <dt>ПРОДОЛЖИТЕЛЬНОСТЬ ЖИЗНИ:</dt>
+               <dd>35 лет</dd>
+             </div>
+             <div class="char-item">
+               <dt>РЕКОММЕНДУЕМАЯ °C ДЛЯ ПОДДЕРЖАНИЯ ЖИЗНЕДЕЯТЕЛЬНОСТИ:</dt>
+               <dd>-300°c</dd>
+             </div>
+
+           </dl>
+         </section>
+
+         <!-- Секция с вопросами -->
+         <section class="questions-section">
+           <h3 class="section-title">возникли вопросы по артефакту¿</h3>
+           <p class="questions-text">свяжитесь с отделом поддержки, отведённым специально для этого класса :</p>
+           <button class="btn btn-outline-light rounded-0">ЗАДАТЬ ВОПРОС</button>
+         </section>
+         </div>
+       </div>
+     </div>
+   </main>
+
+   <!-- ГАЛЕРЕЯ -->
+   <section class="gallery-section" id="gallery-section">
+     <h3 class="gallery-title">ГАЛЕРЕЯ</h3>
+     <div class="gallery-container">
+       <a href="#img1" class="gallery-item">
+         <img src="img/1_gallery_boost.png" alt="Номер 1">
+       </a>
+       <a href="#img2" class="gallery-item">
+         <img src="img/2_gallery_boost.png" alt="Номер 2">
+       </a>
+       <a href="#img3" class="gallery-item">
+         <img src="img/3_gallery_boost.png" alt="Номер 3">
+       </a>
+     </div>
+
+     <!-- МОДАЛЬНЫЕ ОКНА -->
+     <div id="img1" class="gallery-modal">
+       <a href="#gallery-section" class="gallery-modal-close">&times;</a>
+       <img src="img/1_gallery_boost.png" alt="Номер 1">
+     </div>
+     <div id="img2" class="gallery-modal">
+       <a href="#gallery-section" class="gallery-modal-close">&times;</a>
+       <img src="img/2_gallery_boost.png" alt="Номер 2">
+     </div>
+     <div id="img3" class="gallery-modal">
+       <a href="#gallery-section" class="gallery-modal-close">&times;</a>
+       <img src="img/3_gallery_boost.png" alt="Номер 3">
+     </div>
+   </section>
+
+   <!-- СЕКЦИЯ ПОХОЖИХ ТОВАРОВ -->
+   <section class="similar-section">
+     <div class="container">
+       <h3 class="similar-title">ПОХОЖИЕ АРТЕФАКТЫ</h3>
+       <div class="row"> 
+         <div class="col-lg-2 col-md-3 col-sm-4 col-6"><div class="similar-item"><img src="img/1_boost.jpg" alt="Товар"></div></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-6"><div class="similar-item"><img src="img/2_boost.jpg" alt="Товар"></div></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-6"><div class="similar-item"><img src="img/3_boost.jpg" alt="Товар"></div></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-6"><div class="similar-item"><img src="img/4_boost.jpg" alt="Товар"></div></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-6"><div class="similar-item"><img src="img/5_boost.jpg" alt="Товар"></div></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-6"><div class="similar-item"><img src="img/6_boost.jpg" alt="Товар"></div></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-6"><div class="similar-item"><img src="img/7_boost.jpg" alt="Товар"></div></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-6"><div class="similar-item"><img src="img/8_boost.jpg" alt="Товар"></div></div>
+         <div class="col-lg-2 col-md-3 col-sm-4 col-6"><div class="similar-item"><img src="img/9_boost.jpg" alt="Товар"></div></div>
+       </div>
+     </div>
+   </section>
+
+   <!-- ПОДВАЛ -->
+   <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-part">
+        <p>о нас</p>
+        <p>FAQ</p>
+        <p>связаться с нами</p>
+      </div>
+      <div class="footer-part">
+        <p>условия доставки</p>
+        <p>условия конфиденциальности</p>
+        <p>условия использования</p>
+      </div>
+      <div class="footer-part">
+        <p>как заказать</p>
+        <p>отслеживание заказа</p>
+        <p>возврат & обмен</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>©2451 @ CONSTELLATION. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>

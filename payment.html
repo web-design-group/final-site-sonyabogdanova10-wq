@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="js/jquery-steps-master/build/jquery.steps.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="js/jquery-steps-master/build/jquery.steps.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'Eurostile';
+            src: url('font/Eurostile Extended-Regular.ttf') format('truetype');
+            font-weight: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #000000;
+            --secondary-bg: #0a0a0a;
+            --border-color: #444;
+            --text-primary: #ffffff;
+            --text-secondary: #949494;
+            --text-muted: #666;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            font-family: 'Eurostile', sans-serif;
+            line-height: 1.6;
+            font-size: 14px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .main-content {
+            flex: 1;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 40px 20px;
+            width: 100%;
+        }
+
+        /* Хедер */
+        .header {
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+            padding: 60px 20px 10px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .nav {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: center;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: center;
+            gap: 5vw;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav a {
+            display: inline-block;
+            font-size: 14px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .nav a:hover {
+            transform: scale(0.8);
+            color: rgb(233, 243, 204);
+        }
+
+        .shop-icon img {
+            height: 25px;
+            width: auto;
+            vertical-align: middle;
+            padding: 0 15px;
+            transition: transform 0.2s;
+        }
+
+        .shop-icon:hover img {
+            transform: scale(0.8);
+        }
+
+        .page-title {
+            font-size: 36px;
+            font-weight: normal;
+            margin-bottom: 2px;
+        }
+
+        .intro-text p {
+            font-family: 'Ubuntu Mono';
+            font-size: 17px;
+            line-height: 20px;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-align: justify;
+        }
+
+        /* Футер */
+        .footer {
+            border-top: 1px solid var(--border-color);
+            background-color: rgba(176, 176, 176, 0.075);
+            backdrop-filter: blur(5px);
+            color: var(--text-secondary);
+            padding: 30px 0;
+            font-size: 13px;
+            margin-top: 60px;
+            width: 100%;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: center;
+            gap: 150px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-part {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: color 0.2s;
+        }
+
+        .footer-part p {
+            margin: 0;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .footer-part p:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copy {
+            padding: 30px 20px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 12px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <nav class="nav">
+                <a href="#" class="shop-icon">
+                    <img src="img/logo.png" alt="logo">
+                </a>
+
+                <ul class="nav-menu">
+                    <li><a href="#">главная</a></li>
+                    <li><a href="../news.html">статьи</a></li>
+                    <li><a href="../index.html">каталог</a></li>
+                    <li><a href="#">о нас</a></li>
+                    <li><a href="../payment.html">оплата</a></li>
+                </ul>
+
+                <a href="payment.html" class="shop-icon">
+                    <img src="img/shop.png" alt="Shop">
+                </a>
+            </nav>
+        </header>
+
+        
+        <main class="main-content">
+            <div class="page-title">ОПЛАТА</div>
+
+            <div class="intro-text">
+                <p>На этой странице Вы сможете завершить начатые покупки: чтобы облегчить процесс, мы разбили его на три этапа. 
+                    Каждый из этапов содержит пояснительный текст к тому, какие действия могут быть выполнены в его пределах, поэтому Вам не следует волноваться о том, 
+                    что какое-нибудь поле было неправильно заполнено или же какой-либо из артефактов мог случайно попасть в корзину без Вашего спроса. 
+                    В любой момент процесса покупки [до нажатия кнопки «ОПЛАТИТЬ» на завершающем этапе] Вы сможете вернуться на предыдущий этап, если того захотите. 
+                    В случае, если возникнут вопросы или какие-либо другие проблемы, пожалуйста, свяжитесь с нами. 
+                    Мы желаем Вам приятных покупок — пусть артефакты из других миров украсят Ваш собственный!</p>
+            </div>
+
+            <!-- Form Wizard -->
+            <form id="wizard" method="post" action="#">
+                <!-- Step 1:Покупки -->
+                <h3>1</h3>
+                <section class="wizard-section">
+                    <h2 style="display: none;">Shopping Cart</h2>
+                    <div class="step-title">STEP 1/4</div>
+                    <div class="step-description">
+                        <p>На этом этапе, пожалуйста, просмотрите внимательно все объекты, которые добавились в корзину, в списке ниже. 
+                            Вы можете откорректировать кол-во вещей, нажав на соответствующие кнопки, располагающиеся напротив позиции объекта. после того, как всё проверено, вы можете перейти на второй этап, нажав кнопку «ДАЛЕЕ»</p>
+                    </div>
+
+                    <div class="cart-items">
+                        <div class="cart-item">
+                            <img src="img/item1.png" alt="Item 1" class="item-image">
+                            <div class="item-details">
+                                <p class="item-name">артефакт высокой редкости: роза-смайли с планеты Уран — объект, относящийся к классу голографических. габариты: маленький [в пределах 1 метра по всем измерениям]</p>
+                                <p class="item-price">1,500,000 ₽</p>
+                            </div>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn minus">−</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button type="button" class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+
+                        <div class="cart-item">
+                            <img src="img/item2.png" alt="Item 2" class="item-image">
+                            <div class="item-details">
+                                <p class="item-name">вещь для ухода за артефактами класса »голографические«: влажные салфетки, пропитанные лунной сывороткой. подходят для объектов типа: разумная флора. 20 шт.</p>
+                                <p class="item-price">20,000 ₽</p>
+                            </div>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn minus">−</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button type="button" class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-total">
+                        <span>ИТОГ</span>
+                        <div class="total-amount">1,520,000 ₽</div>
+                    </div>
+                </section>
+
+                <!-- Step 2: Плата -->
+                <h3>2</h3>
+                <section class="wizard-section">
+                    <h2 style="display: none;">Payment Profile</h2>
+                    <div class="step-title">STEP 2/4</div>
+                    <div class="step-description">
+                        <p>На этом этапе, пожалуйста, внимательно введите и проверьте данные карты, если вы её не сохраняли. Вы можете добавить карту, нажав на значок «+». 
+                            После того, как всё проверено, вы можете перейти на последний (третий) этап, нажав кнопку «ДАЛЕЕ»</p>
+                    </div>
+
+                    <div class="profile-form">
+                        <div class="form-section">
+                            <label class="form-label">ПРОФИЛЬ</label>
+
+                            <div class="form-group">
+                                <label>КАРТА</label>
+                                <div class="card-display">
+                                    <div class="card-logo">💳</div>
+                                    <div class="card-number">••••••••••••2811</div>
+                                </div>
+                                <button type="button" class="form-btn-secondary">Изменить карту</button>
+                            </div>
+
+                            <div class="form-group">
+                                <label>АДРЕС</label>
+                                <div class="address-display">Фрунzенская наб.,2В, Москва, 119146</div>
+                                <button type="button" class="form-btn-secondary">Изменить адрес</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 3: Контакты -->
+                <h3>3</h3>
+                <section class="wizard-section">
+                    <h2 style="display: none;">Contact Info</h2>
+                    <div class="step-title">STEP 3/4</div>
+                    <div class="step-description">
+                        <p>На этом этапе, пожалуйста, убедитесь, что верно указаны телефон и почта (опционально), т.к. на них придет уведомление о оформлении заказа, а также дальнейшие инструкции по контролю посылки. 
+                            После того, как всё проверено, вы можете окончательно завершить покупку, нажав кнопку «ЗАВЕРШИТЬ».</p>
+                    </div>
+
+                    <div class="contact-form">
+                        <div class="form-section">
+                            <label class="form-label">ПРОФИЛЬ</label>
+
+                            <div class="form-group">
+                                <label>Номер телефона</label>
+                                <div class="form-input-wrapper">
+                                    <input type="tel" name="phone" class="form-input" placeholder="+7..." value="+79217844536">
+                                    <button type="button" class="form-btn-secondary">Изменить номер</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Почта</label>
+                                <div class="form-input-wrapper">
+                                    <input type="email" name="email" class="form-input" placeholder="example@email.com" value="SunnyMars203@gmail.com">
+                                    <button type="button" class="form-btn-secondary">Изменить почту</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 4: Завершение -->
+                <h3>4</h3>
+                <section class="wizard-section success-section">
+                    <h2 style="display: none;">Success</h2>
+                    <div class="success-message">
+                        <h2>ПОКУПКА ОФОРМЛЕНА!</h2>
+                        <p>В течение 10 минут на Ваш номер должно прийти сообщение с подробной информацией о заказе. Если сообщение не пришло, пожалуйста, свяжитесь со Службой поддержки.</p>
+                        <button type="button" class="form-btn-primary" onclick="window.location.href='index.html'">В КАТАЛОГ</button>
+                    </div>
+                </section>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-part">
+                    <p>о нас</p>
+                    <p>FAQ</p>
+                    <p>связаться с нами</p>
+                </div>
+                <div class="footer-part">
+                    <p>условия доставки</p>
+                    <p>условия конфиденциальности</p>
+                    <p>условия использования</p>
+                </div>
+                <div class="footer-part">
+                    <p>как заказать</p>
+                    <p>отслеживание заказа</p>
+                    <p>возврат & обмен</p>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <p>©2451 @ CONSTELLATION. Все права защищены.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/payment.js"></script>
+</body>
+</html>
