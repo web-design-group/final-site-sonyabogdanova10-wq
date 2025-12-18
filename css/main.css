@@ -1,0 +1,814 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+        /* Step Description */
+        .step-description {
+            font-family: 'Ubuntu Mono';
+            font-size: 17px;
+            line-height: 20px;
+            background-color: transparent;
+            border: none;
+            padding: 20px 0 10px 0;
+            margin-bottom: 30px;
+            position: relative;
+            max-width: 50%;
+        }
+
+        .step-description p {
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* Step title styles */
+        .step-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+            display: block;
+            max-width: 50%;
+        }
+
+        /* Cart Items */
+        .cart-items {
+            margin-bottom: 30px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            background-color: var(--secondary-bg);
+        }
+
+        .item-image {
+            width: 60px;
+            height: 60px;
+            background-color: var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .item-price {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border-color);
+            padding: 5px;
+            background-color: transparent;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 18px;
+            padding: 0 8px;
+            transition: color 0.3s ease;
+        }
+
+        .qty-btn:hover {
+            color: rgb(233, 243, 204);
+        }
+
+        .qty-input {
+            width: 50px;
+            border: none;
+            background: transparent;
+            color: var(--text-primary);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .qty-input:focus {
+            outline: none;
+        }
+
+        /* Cart Total */
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            background-color: var(--secondary-bg);
+            margin-top: 20px;
+        }
+
+        .cart-total span {
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .total-amount {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Profile Form */
+        .profile-form,
+        .contact-form {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+        }
+
+        .form-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .card-display {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .card-logo {
+            font-size: 24px;
+            color: rgb(233, 243, 204);
+        }
+
+        .card-number {
+            flex: 1;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .address-display {
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .form-input-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            color: var(--text-primary);
+            font-size: 13px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: rgb(233, 243, 204);
+            background-color: var(--secondary-bg);
+        }
+
+        /* Buttons */
+        .form-btn-primary,
+        .form-btn-secondary {
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            font-family: 'Eurostile', sans-serif;
+        }
+
+        .form-btn-primary {
+            background-color: var(--text-primary);
+            color: var(--primary-bg);
+            border-color: var(--text-primary);
+            font-weight: bold;
+        }
+
+        .form-btn-primary:hover {
+            background-color: rgb(233, 243, 204);
+            border-color: rgb(233, 243, 204);
+            color: var(--primary-bg);
+        }
+
+        .form-btn-secondary:hover {
+            border-color: rgb(233, 243, 204);
+            color: rgb(233, 243, 204);
+        }
+
+        /* Success Section */
+        .success-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: auto;
+            width: 100%;
+            padding: 60px 20px;
+        }
+
+        .success-message {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .success-message h2 {
+            font-size: 32px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .success-message p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* jQuery Steps Customization */
+        .wizard {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        /* h3 headings - hide all */
+        .wizard h3 {
+            display: none;
+        }
+
+        .wizard {
+            width: 100%;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .wizard > .steps {
+            background: none;
+            border: none;
+            padding: 0 0 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0;
+            position: relative;
+            flex-direction: column;
+            gap: 20px;
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* Step label above circles */
+        .wizard > .steps::before {
+            content: '';
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .wizard > .content > .body:nth-child(1) ~ .steps::before {
+            content: 'STEP 1/4 - Cart Selection';
+        }
+
+        .wizard > .content > .body:nth-child(2) ~ .steps::before {
+            content: 'STEP 2/4 - Payment Method';
+        }
+
+        .wizard > .content > .body:nth-child(3) ~ .steps::before {
+            content: 'STEP 3/4 - Confirmation';
+        }
+
+        .wizard > .content > .body:nth-child(4) ~ .steps::before {
+            content: 'STEP 4/4 - Completed';
+        }
+
+        .wizard > .steps ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            list-style: none;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Connector lines between steps */
+        .wizard > .steps ul > li {
+            position: relative;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: none;
+            border: none;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wizard > .steps ul > li:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 24.5px;
+            left: calc(50% + 25px);
+            width: calc(100% - 50px);
+            height: 0.75px;
+            background-color: var(--text-primary);
+            z-index: -1;
+        }
+
+        .wizard > .steps ul > li > a {
+            background: transparent;
+            border: 0.75px solid var(--text-primary);
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        /* Hide number prefix and current-info text */
+        .wizard > .steps .number {
+            display: none;
+        }
+
+        .wizard > .steps .current-info {
+            display: none !important;
+        }
+
+        /* Hide any text nodes or spans with numbering */
+        .wizard > .steps ul > li > a span {
+            display: none;
+        }
+
+        /* Show only the direct text content (the numbers 1,2,3,4) */
+        .wizard > .steps ul > li > a::before {
+            content: attr(data-number);
+        }
+
+        .wizard > .steps ul > li > a:hover {
+            border-color: rgb(233, 243, 204);
+            color: rgb(233, 243, 204);
+        }
+
+        .wizard > .steps ul > li.current > a {
+            background-color: var(--text-primary);
+            border-color: var(--text-primary);
+            color: var(--primary-bg);
+        }
+
+        .wizard > .steps ul > li.done > a {
+            background-color: rgb(233, 243, 204);
+            border-color: rgb(233, 243, 204);
+            color: var(--primary-bg);
+        }
+
+        /* Step Navigation Buttons */
+        .wizard > .actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .wizard > .actions ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .wizard > .actions ul > li {
+            list-style: none;
+        }
+
+        .wizard > .actions a,
+        .wizard > .actions button {
+            padding: 12px 30px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-family: 'Eurostile', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .wizard > .actions a:hover:not(:disabled),
+        .wizard > .actions button:hover:not(:disabled) {
+            border-color: var(--text-primary);
+            color: var(--primary-bg);
+            background-color: var(--text-primary);
+        }
+
+        .wizard > .actions a:disabled,
+        .wizard > .actions button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .wizard > .actions a.finish,
+        .wizard > .actions button.finish {
+            background-color: var(--text-primary);
+            color: var(--primary-bg);
+            border-color: var(--text-primary);
+        }
+
+        .wizard > .actions a.finish:hover,
+        .wizard > .actions button.finish:hover {
+            background-color: rgb(233, 243, 204);
+            border-color: rgb(233, 243, 204);
+        }
+
+        /* jQuery Steps Content */
+        .wizard > .content {
+            background: none;
+            border: none;
+            padding: 0;
+            min-height: auto;
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        .wizard > .content > .body {
+            float: none;
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            display: none;
+        }
+
+        .wizard > .content > .body.current {
+            display: block;
+        }
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

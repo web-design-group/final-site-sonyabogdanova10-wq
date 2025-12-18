@@ -1,0 +1,150 @@
+@font-face {
+  font-family: 'Eu';
+  src: url('../font/Eurostile\ Extended-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Eu';
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  font-weight: 100; 
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #27272700;
+  padding: 60px 0;
+}
+
+.nav, a {
+  font-size: 16px;
+  display: flex;
+  color: #ffffff;
+  text-decoration: none;
+  justify-content: space-evenly; /* THIS ONE */
+  transition: transform 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+}
+
+.nav a:hover {
+  transform: scale(0.8);
+  color: rgb(164, 164, 164);
+  font-weight: bold;
+}
+
+.nav ul {
+  justify-content: center;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 5vw;
+}
+
+.shop-icon img {
+  height: 1.5em; 
+  vertical-align: middle; 
+  padding: 0 50px;
+}
+
+.catalog {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0;
+  /* zoom: 1.2; */
+  z-index: 1;
+}
+
+.img-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  
+}
+
+.single-img {
+  flex: 0 1 calc(20% - 1.4px);
+  aspect-ratio: 1 / 1;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.single-img:hover .card {
+  transform: rotateY(180deg); 
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #555;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-back {
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+.corner-decor {
+  max-width: 50%;
+  position: relative;
+  bottom: -200px;
+  opacity: 0;
+  z-index: 0;
+}
+
+.footer {
+  border-top: #4e4e4e solid 0.75px;;
+  background-color: #b0b0b013;
+  backdrop-filter: blur(5px);
+  color: #949494;
+  padding: 30px 0;
+  font-size: 13px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+}
+
+.footer-part {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.footer-part p:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  padding: 30px 0px 0px;
+  text-align: center;
+}
