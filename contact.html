@@ -77,9 +77,9 @@
     /*
 
     */
-    const EMAILJS_PUBLIC_KEY = _JdeV4AX18EcOK8Ii;
-    const EMAILJS_SERVICE_ID = service_w5vk8il;
-    const EMAILJS_TEMPLATE_ID = template_3va6qap;
+    const EMAILJS_PUBLIC_KEY = "_JdeV4AX18EcOK8Ii";
+    const EMAILJS_SERVICE_ID = "service_w5vk8il";
+    const EMAILJS_TEMPLATE_ID = "template_3va6qap";
 
     const form = document.getElementById("contact-form");
     const submitButton = document.getElementById("contact-submit");
@@ -91,9 +91,9 @@
       event.preventDefault();
 
       if (
-        EMAILJS_PUBLIC_KEY === "ВСТАВЬТЕ_PUBLIC_KEY" ||
-        EMAILJS_SERVICE_ID === "ВСТАВЬТЕ_SERVICE_ID" ||
-        EMAILJS_TEMPLATE_ID === "ВСТАВЬТЕ_TEMPLATE_ID"
+        EMAILJS_PUBLIC_KEY === "_JdeV4AX18EcOK8Ii" ||
+        EMAILJS_SERVICE_ID === "service_w5vk8il" ||
+        EMAILJS_TEMPLATE_ID === "template_3va6qap"
       ) {
         statusMessage.textContent = "Сначала укажите Public Key, Service ID и Template ID в коде формы.";
         statusMessage.className = "contact-status is-error";
