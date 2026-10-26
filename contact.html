@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Связаться с нами | CONSTELLATION</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="shop-icon">
+        <img src="img/logo.png" alt="Логотип">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">главная</a></li>
+        <li><a href="news.html">статьи</a></li>
+        <li><a href="index.html">каталог</a></li>
+        <li><a href="index.html#about">о нас</a></li>
+        <li><a href="payment.html">оплата</a></li>
+      </ul>
+      <a href="payment.html" class="shop-icon">
+        <img src="img/shop.png" alt="Корзина">
+      </a>
+    </nav>
+  </header>
+
+  <main class="contact-main">
+    <section class="contact-panel">
+      <p class="contact-eyebrow">CONSTELLATION / ОБРАТНАЯ СВЯЗЬ</p>
+      <h1>Связаться с нами</h1>
+      <p class="contact-intro">Есть вопрос о товаре или заказе? Напишите нам, и мы постараемся ответить как можно скорее.</p>
+
+      <form id="contact-form" class="contact-form">
+        <label for="user_name">Ваше имя</label>
+        <input id="user_name" type="text" name="user_name" placeholder="Как к вам обращаться" autocomplete="name" required>
+
+        <label for="user_email">Электронная почта</label>
+        <input id="user_email" type="email" name="user_email" placeholder="name@example.com" autocomplete="email" required>
+
+        <label for="message">Сообщение</label>
+        <textarea id="message" name="message" rows="6" placeholder="Напишите ваш вопрос..." required></textarea>
+
+        <button type="submit" id="contact-submit">Отправить сообщение</button>
+        <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="contact-note">Пожалуйста, не указывайте в сообщении пароли и платёжные данные.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-part">
+        <p>о нас</p>
+        <p>FAQ</p>
+        <p><a href="contact.html">связаться с нами</a></p>
+      </div>
+      <div class="footer-part">
+        <p>условия доставки</p>
+        <p>условия конфиденциальности</p>
+        <p>условия использования</p>
+      </div>
+      <div class="footer-part">
+        <p>как заказать</p>
+        <p>отслеживание заказа</p>
+        <p>возврат &amp; обмен</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>2451 @ CONSTELLATION. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    /*
+      Перед тестированием замени три значения ниже на свои данные из EmailJS.
+      Public Key можно использовать на клиентской стороне; пароль почты сюда не вставляется.
+    */
+    const EMAILJS_PUBLIC_KEY = "ВСТАВЬТЕ_PUBLIC_KEY";
+    const EMAILJS_SERVICE_ID = "ВСТАВЬТЕ_SERVICE_ID";
+    const EMAILJS_TEMPLATE_ID = "ВСТАВЬТЕ_TEMPLATE_ID";
+
+    const form = document.getElementById("contact-form");
+    const submitButton = document.getElementById("contact-submit");
+    const statusMessage = document.getElementById("contact-status");
+
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (
+        EMAILJS_PUBLIC_KEY === "ВСТАВЬТЕ_PUBLIC_KEY" ||
+        EMAILJS_SERVICE_ID === "ВСТАВЬТЕ_SERVICE_ID" ||
+        EMAILJS_TEMPLATE_ID === "ВСТАВЬТЕ_TEMPLATE_ID"
+      ) {
+        statusMessage.textContent = "Сначала укажите Public Key, Service ID и Template ID в коде формы.";
+        statusMessage.className = "contact-status is-error";
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Отправляем...";
+      statusMessage.textContent = "";
+
+      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+        .then(function () {
+          statusMessage.textContent = "Сообщение отправлено! Спасибо.";
+          statusMessage.className = "contact-status is-success";
+          form.reset();
+        })
+        .catch(function (error) {
+          console.error("EmailJS error:", error);
+          statusMessage.textContent = "Не удалось отправить сообщение. Проверьте настройки EmailJS и попробуйте ещё раз.";
+          statusMessage.className = "contact-status is-error";
+        })
+        .finally(function () {
+          submitButton.disabled = false;
+          submitButton.textContent = "Отправить сообщение";
+        });
+    });
+  </script>
+</body>
+</html>

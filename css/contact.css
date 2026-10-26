@@ -1,0 +1,139 @@
+/* Стили страницы обратной связи. Основной стиль сайта подключается отдельно из css/style.css. */
+.contact-main {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px 90px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #f4f4f4;
+}
+
+.contact-panel {
+  width: min(100%, 680px);
+  box-sizing: border-box;
+  padding: clamp(24px, 5vw, 54px);
+  border: 1px solid #555;
+  background: linear-gradient(145deg, #171717, #080808);
+  box-shadow: 0 18px 60px #0008;
+}
+
+.contact-eyebrow {
+  color: #a6a6a6;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  overflow-wrap: anywhere;
+}
+
+.contact-panel h1 {
+  margin: 18px 0;
+  font-size: clamp(25px, 4vw, 42px);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.contact-intro,
+.contact-note {
+  color: #b8b8b8;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.contact-form label {
+  margin-top: 8px;
+  color: #e4e4e4;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  border-radius: 0;
+  background: #101010;
+  color: #fff;
+  padding: 14px 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #c7c7c7;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #777;
+}
+
+.contact-form button {
+  margin-top: 12px;
+  border: 1px solid #eee;
+  background: #eee;
+  color: #111;
+  padding: 15px 18px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-form button:hover:not(:disabled) {
+  background: #111;
+  color: #fff;
+}
+
+.contact-form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.contact-status {
+  min-height: 1.5em;
+  margin: 4px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.contact-status.is-success { color: #a8e6b0; }
+.contact-status.is-error { color: #ffaaaa; }
+.contact-note { margin-top: 24px; font-size: 12px; }
+
+.footer-part a {
+  display: inline;
+  color: inherit;
+  font: inherit;
+}
+
+.footer-part a:hover {
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .header { padding: 28px 10px; }
+  .nav { align-items: center; gap: 8px; }
+  .nav ul { flex-wrap: wrap; gap: 12px; }
+  .shop-icon img { padding: 0 8px; height: 1.2em; }
+  .footer-top { flex-wrap: wrap; gap: 28px; padding: 0 18px; }
+  .contact-main { padding: 8px 14px 55px; }
+}
